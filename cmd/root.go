@@ -12,9 +12,9 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "k8s-chat",
+	Use:   "k8s-cli",
 	Short: "A Kubernetes chatbot CLI",
-	Long:  `k8s-chat is a CLI application that allows you to chat with your Kubernetes cluster using natural language.`,
+	Long:  `k8s-cli is a CLI application that allows you to chat with your Kubernetes cluster using natural language.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
