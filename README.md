@@ -25,6 +25,13 @@ Set the OPENAI_API_KEY environment variable to your OpenAI API key.
 export OPENAI_API_KEY=your-openai-api-key
 ```
 
+(Optional)Set the KUBECONFIG environment variable to point to your Kubernetes configuration file.
+
+In Default, read the config file from $HOME/.kube/config
+```bash
+export KUBECONFIG=/path/to/your/kubeconfig
+```
+
 ## Usage
 **Start the Chat Interface**
 
