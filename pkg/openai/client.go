@@ -85,13 +85,22 @@ func (c *Client) ProcessUserInput(input string, k8sClient *k8s.Client) (string, 
 		{
 			Name: "get_nodes",
 			Parameters: map[string]interface{}{
-				"type": "object",
+				"type":       "object",
+				"properties": map[string]interface{}{},
 			},
 		},
 		{
 			Name: "get_namespaces",
 			Parameters: map[string]interface{}{
-				"type": "object",
+				"type":       "object",
+				"properties": map[string]interface{}{},
+			},
+		},
+		{
+			Name: "get_cluster_summary",
+			Parameters: map[string]interface{}{
+				"type":       "object",
+				"properties": map[string]interface{}{},
 			},
 		},
 	}
@@ -160,6 +169,12 @@ func (c *Client) ProcessUserInput(input string, k8sClient *k8s.Client) (string, 
 				return "", fmt.Errorf("error getting namespaces: %v", err)
 			}
 			return formatNamespaceList(namespaces), nil
+		case "get_cluster_summary":
+			summary, err := k8sClient.GetClusterSummary()
+			if err != nil {
+				return "", fmt.Errorf("error getting cluster summary: %v", err)
+				}
+			return summary, nil
 		}
 	}
 
